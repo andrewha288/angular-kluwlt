@@ -1,8 +1,10 @@
-export interface Product {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
+export interface Product
+{
+  id: Number,
+  name: String,
+  price: Number,
+  description: String,
+  url: String
 }
 
 export const products = [
@@ -10,20 +12,30 @@ export const products = [
     id: 1,
     name: 'Phone XL',
     price: 799,
-    description: 'A large phone with one of the best screens'
+    description: 'A large phone with one of the best screens',
+    url: 'https://www.samsung.com'
   },
   {
     id: 2,
     name: 'Phone Mini',
     price: 699,
-    description: 'A great phone with one of the best cameras'
+    description: 'A great phone with one of the best cameras',
+    url: 'https://www.apple.com'
   },
   {
     id: 3,
     name: 'Phone Standard',
     price: 299,
-    description: ''
-  }
+    description: '',
+    url: 'https://www.google.com'
+  },
+  {
+    id: 4,
+    name: 'Phone SE',
+    price: 199,
+    description: '',
+    url: 'https://www.microsoft.com'
+  },
 ];
 
 
