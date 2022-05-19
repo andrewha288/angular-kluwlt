@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -6,7 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent {
+  cartItemsCount!: number;
+  constructor(private cartSerivce: CartService){
+  }
 
+  getCartItems(){
+    this.cartItemsCount = this.cartSerivce.getItems().length;
+    return this.cartItemsCount;
+  }
+
+  ngOnInit(){
+    this.cartSerivce.changed.subscribe(()=>this.getCartItems());
+  }
 }
 
 
